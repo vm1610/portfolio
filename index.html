@@ -601,14 +601,45 @@
     }
     .egg-close:hover { background: transparent; color: var(--accent); box-shadow: 0 0 24px var(--accent-glow); border: 1px solid var(--accent); }
 
+    /* ─── Hamburger / Mobile Nav ─────────────────────────────────────── */
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: none; padding: 4px; z-index: 1001;
+    }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text); border-radius: 2px; transition: all .3s;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile {
+      position: fixed; inset: 0; z-index: 998;
+      background: rgba(10,10,15,.97); backdrop-filter: blur(20px);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem;
+      opacity: 0; pointer-events: none; transition: opacity .3s;
+    }
+    .nav-mobile.open { opacity: 1; pointer-events: all; }
+    .nav-mobile a {
+      font-family: 'Syne', sans-serif; font-weight: 700; font-size: 2rem;
+      color: var(--text); text-decoration: none; transition: color .3s;
+    }
+    .nav-mobile a:hover { color: var(--accent); }
+
     /* ─── Responsive ─────────────────────────────────────────────────── */
+    /* touch devices — hide custom cursor */
+    @media (hover: none) and (pointer: coarse) {
+      #cur, #cur-f { display: none; }
+      body { cursor: auto; }
+      .btn, .nav-hamburger { cursor: pointer; }
+    }
     @media (max-width: 960px) {
       .race-action-row { grid-template-columns: 1fr; }
+      .action-photo-wrap { min-height: 300px; }
     }
     @media (max-width: 900px) {
       section { padding: 5.5rem 7vw; }
       nav { padding: 1rem 7vw; }
-      .nav-links { gap: 1.5rem; }
       .about-grid { grid-template-columns: 1fr; gap: 3rem; }
       .about-right { flex-direction: row; flex-wrap: wrap; align-items: flex-start; }
       .profile-photo-wrap { flex-shrink: 0; }
@@ -616,6 +647,8 @@
     }
     @media (max-width: 700px) {
       .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      h1.hero-name { font-size: clamp(2.6rem, 12vw, 4.5rem); }
       .hero-ctas { flex-direction: column; }
       .btn { width: 100%; justify-content: center; }
       .about-right { flex-direction: column; align-items: center; }
@@ -623,11 +656,17 @@
       .im-divider { width: 60px; height: 1px; }
       .im-disciplines { justify-content: center; }
       .stat-card.wide { grid-column: span 2; }
+      .proj-grid { grid-template-columns: 1fr; }
+      .beyond-grid { grid-template-columns: repeat(2, 1fr); }
+      .skills-wrap { grid-template-columns: 1fr; gap: 2rem; }
+      .contact-wrap { max-width: 100%; }
     }
     @media (max-width: 440px) {
-      .stats-grid { grid-template-columns: 1fr; }
-      .stat-card.wide { grid-column: span 1; }
-      .proj-grid { grid-template-columns: 1fr; }
+      section { padding: 4.5rem 5vw; }
+      #hero { padding: 0 6vw; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .stat-card.wide { grid-column: span 2; }
+      .beyond-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -657,7 +696,18 @@
       <li><a href="#beyond">Beyond</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+  <div class="nav-mobile" id="navMobile">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#beyond">Beyond</a>
+    <a href="#contact">Contact</a>
+  </div>
 
   <!-- ──────────────────────────────────────── HERO -->
   <section id="hero">
@@ -1367,6 +1417,11 @@
   document.getElementById('marathonCard')?.addEventListener('click',()=>openEgg('marathon'));
   document.getElementById('hardCard')?.addEventListener('click',()=>openEgg('hard'));
   document.getElementById('compassBadge')?.addEventListener('click',()=>openEgg('compass'));
+
+  /* ── Mobile Nav ─────────────────────────────────────────────────── */
+  const ham=document.getElementById('navHamburger'),mobNav=document.getElementById('navMobile');
+  ham.addEventListener('click',()=>{ham.classList.toggle('open');mobNav.classList.toggle('open');});
+  mobNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ham.classList.remove('open');mobNav.classList.remove('open');}));
 
   /* ── Konami Code ────────────────────────────────────────────────── */
   const K=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a']; let ki=0;
