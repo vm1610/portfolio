@@ -1,0 +1,124 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{url}
+\usepackage{parskip}
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[margin=0.55cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[unicode]{hyperref}
+
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\definecolor{headblue}{rgb}{0.1,0.22,0.42}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+\titleformat{\section}{\normalsize\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{4pt}{3pt}
+
+\setlist[itemize]{nosep, leftmargin=1.2em, itemsep=0.5pt, label={$\cdot$}}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+\pagestyle{empty}
+
+% ── HEADER ──
+\begin{center}
+  {\Large\textbf{\color{headblue}Vasu Manocha}}\\[2pt]
+  \small St.\ John's, NL, Canada \;|\; \href{mailto:vmanocha@mun.ca}{vmanocha@mun.ca} \;|\; +1-437-424-7769 \;|\; \href{https://vasumanocha.com}{\textbf{Portfolio}} \;|\; \href{https://github.com/vm1610}{\textbf{GitHub}} \;|\; \href{https://www.linkedin.com/in/vasu-manocha-922b91223/}{\textbf{LinkedIn}}
+\end{center}
+
+\vspace{-4pt}
+
+% ── SUMMARY ──
+\section{Summary}
+\small
+Software Engineer with experience shipping \textbf{LLM-powered platforms, REST APIs, and full-stack applications} to production. Led delivery of AI tools used by \textbf{2,000--3,000 HR professionals across 4 countries}; independently built and launched \textbf{FitAccess} to 2,000+ active users. Strong across the backend (Python, FastAPI, AWS) and full-stack (TypeScript, Next.js, Flutter). Seeking Software Engineering roles in Canada.
+
+% ── WORK EXPERIENCE ──
+\section{Work Experience}
+
+\noindent\textbf{Software Engineer} \hfill \textit{\small Jan 2025 -- Mar 2026}\\
+\textit{\small Apexon}
+\begin{itemize}
+  \item Built and shipped the \textbf{JD Optimizer Agent} end-to-end: LLM-powered platform adopted by \textbf{2,000--3,000 HR professionals across 4 countries} to automate job description rewrites, skill extraction, bias detection, and tone calibration.
+  \item Architected a \textbf{serverless AWS backend} (Lambda, API Gateway, S3, DynamoDB) with FastAPI and reusable REST API patterns, supporting multiple internal AI tools simultaneously.
+  \item Delivered the \textbf{Interview Prep Agent} from design to deployment; led as \textbf{Squad Leader} for the Data Fellowship 2025 cohort -- coordinated technical planning and an 8-week agile program for 10+ participants.
+\end{itemize}
+
+\vspace{1pt}
+\noindent\textbf{Undergraduate Teaching Assistant} \hfill \textit{\small Jan 2023 -- Dec 2024}\\
+\textit{\small Memorial University of Newfoundland}
+\begin{itemize}
+  \item Supported 100+ students per semester across CS and Mathematics courses; held weekly office hours and provided written feedback on assignments.
+\end{itemize}
+
+\vspace{1pt}
+\noindent\textbf{Undergraduate Research Assistant} \hfill \textit{\small May 2023 -- Sep 2023}\\
+\textit{\small Memorial University of Newfoundland}
+\begin{itemize}
+  \item Co-authored a \textbf{novel theorem} on the Cops \& Robbers problem on directed circulant graphs, producing original proofs for academic publication. \href{https://vasumanocha.com/circulant_graphs_cops_robbers.pdf}{[Paper $\nearrow$]}
+\end{itemize}
+
+\vspace{1pt}
+\noindent\textbf{Software Developer Intern} \hfill \textit{\small Jun 2021 -- Jul 2021}\\
+\textit{\small Konverse.ai, India}
+\begin{itemize}
+  \item Developed enterprise chatbots in Python and Dialogflow, automating customer-support flows and integrating third-party APIs to reduce manual handling time.
+\end{itemize}
+
+% ── PROJECTS ──
+\section{Projects}
+
+\noindent\href{https://fitaccess-global-hub-web-g8rq.vercel.app/}{\textbf{FitAccess -- Global Gym Discovery Platform}} \hfill \textit{\small 2024--2026}
+\begin{itemize}
+  \item Built and launched a full-stack gym discovery app with geolocation search, real-time availability, and Google Maps API integration -- reached \textbf{2,000+ active users}.
+  \item Stack: \textbf{Next.js, TypeScript, FastAPI, PostgreSQL, Docker, Maps API}.
+\end{itemize}
+
+\vspace{1pt}
+\noindent\href{https://youtu.be/VXxmrGYtY_g}{\textbf{Whatchu Cooking? -- Social Recipe App}} \hfill \textit{\small 2025}
+\begin{itemize}
+  \item Built a cross-platform mobile app for social recipe sharing and potluck planning in a 4-person agile team; implemented voice-to-text input, Firebase Cloud Storage, Cloud Firestore sync, and Firebase Auth. Stack: \textbf{Flutter, Dart, Firebase, Riverpod}.
+\end{itemize}
+
+\vspace{1pt}
+\noindent\href{https://youtu.be/HgRQLTaYomY}{\textbf{2D Game Engine \& Platformer (C++)}} \hfill \textit{\small 2025}
+\begin{itemize}
+  \item Engineered a complete 2D game engine from scratch: entity-component-system (ECS) architecture, real-time physics simulation, enemy AI, and an interactive level editor.
+\end{itemize}
+
+\vspace{1pt}
+\noindent\textbf{Selected Projects}
+\begin{itemize}
+  \item \href{https://vm1610.github.io/everify/}{\textbf{eVerify Email Validator}}: Combines regex parsing and live SMTP checks to detect format errors and non-existent domains in real time. \href{https://github.com/vm1610/everify}{[GitHub]}
+  \item \href{https://github.com/vm1610/lucy-voice-assistant}{\textbf{Lucy Voice Assistant}}: Fully offline NLP-powered assistant using speech recognition and natural language command parsing; used internally at Apexon.
+  \item \href{https://huggingface.co/spaces/vmanocha/face_recognition}{\textbf{Face Recognition Model}}: Python + OpenCV system with real-time face and eye detection; built for automated attendance tracking. \href{https://github.com/vm1610/face-recognition}{[GitHub]}
+  \item \href{https://vm1610.github.io/netflix-clone/}{\textbf{Netflix Clone}}: Pixel-accurate Netflix UI replica built with vanilla HTML, CSS, and JavaScript -- no frameworks, no shortcuts.
+\end{itemize}
+
+% ── TECHNICAL SKILLS ──
+\section{Technical Skills}
+\begin{itemize}
+  \item \textbf{Languages:} Python, TypeScript, JavaScript, Dart, Java, C++, SQL, HTML, CSS
+  \item \textbf{Backend \& APIs:} FastAPI, REST APIs, system design, data structures and algorithms, PostgreSQL, Redis, Postman
+  \item \textbf{Cloud \& DevOps:} AWS (Lambda, API Gateway, S3, DynamoDB), Docker, GitHub Actions (CI/CD), Git
+  \item \textbf{AI \& Data:} LLM prompt engineering, LangChain, RAG pipelines, multi-agent systems, data preprocessing, model evaluation
+  \item \textbf{Frontend \& Mobile:} Next.js, React, Flutter, Firebase (Auth, Firestore, Cloud Storage), Riverpod, responsive web design
+  \item \textbf{AI Dev Tools:} Claude Code, Cursor, v0, Lovable, Bolt.new
+\end{itemize}
+
+% ── EDUCATION ──
+\section{Education}
+\noindent\textbf{B.Sc. Computer Science \& Applied Mathematics} \hfill \textit{\small Dec 2025}\\
+\textit{\small Memorial University of Newfoundland, St.\ John's NL} \hfill \small GPA: 3.86\,/\,4.00
+
+% ── ACHIEVEMENTS ──
+\section{Achievements}
+\begin{itemize}
+  \item Dean's List -- 2023--2024 \& 2024--2025, Memorial University of Newfoundland
+  \item Vedic Maths National 1\textsuperscript{st} Rank (Aug 2021)
+\end{itemize}
+
+\end{document}
