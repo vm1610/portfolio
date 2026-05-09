@@ -405,15 +405,20 @@
     .proj-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.25rem; margin-bottom: .7rem; }
     .proj-desc { color: var(--muted); font-size: .88rem; line-height: 1.7; flex: 1; margin-bottom: 1.2rem; }
     .proj-footer { margin-top: auto; }
-    .proj-links { display: flex; gap: 1rem; margin-top: .9rem; }
+    .proj-links {
+      display: flex; gap: 1rem; margin-top: .9rem;
+      opacity: 0; transform: translateY(8px);
+      transition: opacity .28s ease, transform .28s ease;
+    }
+    .proj-card:hover .proj-links { opacity: 1; transform: translateY(0); }
     .proj-link {
       display: inline-flex; align-items: center; gap: .3rem;
-      font-size: .75rem; font-weight: 600; color: var(--accent); text-decoration: none;
-      letter-spacing: .06em; text-transform: uppercase;
-      border-bottom: 1px solid rgba(0,212,255,.35); padding-bottom: 1px;
-      transition: opacity .25s;
+      font-size: .72rem; font-weight: 500; color: var(--muted); text-decoration: none;
+      letter-spacing: .04em; text-transform: uppercase;
+      border-bottom: 1px solid rgba(255,255,255,.12); padding-bottom: 1px;
+      transition: color .2s, border-color .2s;
     }
-    .proj-link:hover { opacity: .7; }
+    .proj-link:hover { color: var(--accent); border-color: rgba(0,212,255,.45); }
 
     /* ─── Skills ─────────────────────────────────────────────────────── */
     .skills-wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 3rem; }
@@ -927,9 +932,30 @@
 
     <div class="proj-grid">
 
-      <!-- 01 — Jan 2026 -->
+      <!-- 01 — May 2026 -->
       <div class="proj-card rv">
         <div class="proj-num">01 —</div>
+        <div class="proj-title">Tely 10 Training Plan</div>
+        <p class="proj-desc">
+          Free, personalized 7-week training plan generator for the Tely 10 road race.
+          Enter your current pace and the plan adapts your weekly mileage, long runs, and race-day targets to get you to the finish line.
+        </p>
+        <div class="tags">
+          <span class="tag">JavaScript</span><span class="tag">Vite</span>
+          <span class="tag">REST API</span><span class="tag">Running</span>
+        </div>
+        <div class="proj-footer">
+          <div class="proj-links">
+            <a href="https://tely10-training-plan.vercel.app/" class="proj-link" target="_blank" rel="noopener">Live Site ↗</a>
+            <a href="https://github.com/vm1610/tely10-training-plan" class="proj-link" target="_blank" rel="noopener">↗ GitHub</a>
+          </div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--muted)">May 2026</span>
+        </div>
+      </div>
+
+      <!-- 02 — Jan 2026 -->
+      <div class="proj-card rv">
+        <div class="proj-num">02 —</div>
         <div class="proj-title">FitAccess</div>
         <p class="proj-desc">Gym discovery is genuinely broken — so I built a fix. Geolocation search, real-time availability, Maps API integration. Reached 2–3k active users. Full-stack: Next.js frontend, FastAPI backend, PostgreSQL, containerized with Docker.</p>
         <div class="tags">
@@ -943,9 +969,9 @@
         </div>
       </div>
 
-      <!-- 02 — Dec 2025 -->
+      <!-- 03 — Dec 2025 -->
       <div class="proj-card rv d1">
-        <div class="proj-num">02 —</div>
+        <div class="proj-num">03 —</div>
         <div class="proj-title">2D Game Engine</div>
         <p class="proj-desc">
           Built a game engine from scratch in C++ to understand how the fundamentals actually work — not just use Unity.
@@ -963,9 +989,9 @@
         </div>
       </div>
 
-      <!-- 03 — Sep 2025 -->
+      <!-- 04 — Sep 2025 -->
       <div class="proj-card rv d2">
-        <div class="proj-num">03 —</div>
+        <div class="proj-num">04 —</div>
         <div class="proj-title">JD Optimizer</div>
         <p class="proj-desc">
           LLM-powered platform that rewrites job descriptions, extracts skills, and detects bias.
@@ -985,9 +1011,9 @@
         </div>
       </div>
 
-      <!-- 04 — Jun 2025 -->
+      <!-- 05 — Jun 2025 -->
       <div class="proj-card rv d3">
-        <div class="proj-num">04 —</div>
+        <div class="proj-num">05 —</div>
         <div class="proj-title">Whatchu Cooking?</div>
         <p class="proj-desc">
           Cross-platform mobile app for social recipe sharing, collaborative cookbooks, and potluck planning.
@@ -1006,9 +1032,9 @@
         </div>
       </div>
 
-      <!-- 05 — Jul 2024 -->
+      <!-- 06 — Jul 2024 -->
       <div class="proj-card rv d4">
-        <div class="proj-num">05 —</div>
+        <div class="proj-num">06 —</div>
         <div class="proj-title">eVerify</div>
         <p class="proj-desc">
           Email validation API — SMTP verification, disposable email detection, MX record lookup, bulk endpoints.
@@ -1028,9 +1054,9 @@
         </div>
       </div>
 
-      <!-- 06 — Feb 2024 -->
+      <!-- 07 — Feb 2024 -->
       <div class="proj-card rv d5">
-        <div class="proj-num">06 —</div>
+        <div class="proj-num">07 —</div>
         <div class="proj-title">Netflix Clone</div>
         <p class="proj-desc">
           Full-stack Netflix UI replica — responsive layout, dynamic content rows, hover interactions, and user auth.
@@ -1049,9 +1075,9 @@
         </div>
       </div>
 
-      <!-- 07 — Summer 2023 -->
+      <!-- 08 — Summer 2023 -->
       <div class="proj-card rv d1">
-        <div class="proj-num">07 —</div>
+        <div class="proj-num">08 —</div>
         <div class="proj-title">Mathematics Research Papers</div>
         <p class="proj-desc">
           Research conducted with Dr. Danny Dyer at Memorial University. Topics: Cops and Robbers problem on circulant graphs, Dynamic Mode Decomposition, and the Gray-Scott reaction-diffusion model.
@@ -1072,9 +1098,9 @@
         </div>
       </div>
 
-      <!-- 08 — Dec 2022 -->
+      <!-- 09 — Dec 2022 -->
       <div class="proj-card rv d2">
-        <div class="proj-num">08 —</div>
+        <div class="proj-num">09 —</div>
         <div class="proj-title">Lucy — Voice Assistant</div>
         <p class="proj-desc">
           Voice assistant with NLP-based intent parsing, context retention across turns, and pluggable skill modules.
@@ -1093,9 +1119,9 @@
         </div>
       </div>
 
-      <!-- 09 — Jan 2021 -->
+      <!-- 10 — Jan 2021 -->
       <div class="proj-card rv d3">
-        <div class="proj-num">09 —</div>
+        <div class="proj-num">10 —</div>
         <div class="proj-title">Face Recognition Model</div>
         <p class="proj-desc">
           Real-time face detection and recognition using deep learning — runs entirely on-device.
