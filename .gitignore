@@ -1,0 +1,10 @@
+# LaTeX build artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+
+# Local build output — the published copy is Vasu_tech_Resume.pdf
+resume.pdf
